@@ -2,28 +2,6 @@ resources:
   - name: test_github_resource
     type: GitRepo
     configuration:
-      path: creepy-pirate/jfrog-pipelines-test
-      gitProvider: personal2
-        
-pipelines:
-  - name: new_test
-    steps:
-      - name: trigger_1
-        type: Bash
-        configuration:
-          affinityGroup: trigger
-          inputResources:
-            - name: test_github_resource
-        execution:
-          onExecute:
-            - cd ${res_test_github_resource_resourcePath}
-            - pwd
-            - ls -al
-            - save_tests testReport.xml 
-resources:
-  - name: test_github_resource
-    type: GitRepo
-    configuration:
       gitProvider: personal2
       path: creepy-pirate/jfrog-pipelines-test
 pipelines:
