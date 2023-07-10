@@ -16,5 +16,7 @@ pipelines:
             - name: test_github_resource
         execution:
           onExecute:
-            - printenv
-            - echo "done"
+            - cd ${res_test_github_resource_resourcePath}
+            - pwd
+            - ls -al
+            - save_tests testReport.xml            
