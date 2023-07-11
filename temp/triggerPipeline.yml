@@ -3,7 +3,7 @@ resources:
     type: GitRepo
     configuration:
       gitProvider: git
-      path: ChaitanyaVootla/ymlTest
+      path: creepy-pirate/jfrog-pipelines-test
 pipelines:
   - name: trigger_pipeline
     steps:
