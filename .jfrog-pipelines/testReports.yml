@@ -23,13 +23,7 @@ pipelines:
           onExecute:
             - pushd $res_testTrigger_resourcePath
             - pwd
-            - ls
-            - npm config set registry https://registry.npmjs.org/
-            - node -v
-            - npm -v
-            - cat ~/.npmrc
-            - npm cache clean --force
-            - npm i
+            - npm install
             - touch .env
             - echo "REPORTS_COUNT=$reportsCount" >> .env
             - echo "SUITES_COUNT=$suitesCount" >> .env
