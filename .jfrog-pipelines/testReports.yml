@@ -22,6 +22,8 @@ pipelines:
         execution:
           onExecute:
             - pushd $res_testTrigger_resourcePath
+            - pwd
+            - ls
             - npm install
             - touch .env
             - echo "REPORTS_COUNT=$reportsCount" >> .env
