@@ -24,7 +24,7 @@ pipelines:
             - pushd $res_testTrigger_resourcePath
             - pwd
             - ls
-            - npm install
+            - jfrog npm i
             - touch .env
             - echo "REPORTS_COUNT=$reportsCount" >> .env
             - echo "SUITES_COUNT=$suitesCount" >> .env
