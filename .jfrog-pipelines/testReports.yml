@@ -2,7 +2,7 @@ resources:
   - name: testTrigger
     type: GitRepo
     configuration:
-      gitProvider: personal2
+      gitProvider: deepak_github
       path: creepy-pirate/jfrog-pipelines-test
 pipelines:
   - name: test_reports
