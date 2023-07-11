@@ -2,7 +2,7 @@ resources:
   - name: buildGitRepo
     type: GitRepo
     configuration:
-      gitProvider: vootla_git
+      gitProvider: personal2
       path: creepy-pirate/jfrog-pipelines-test
       branches:
         include: main
