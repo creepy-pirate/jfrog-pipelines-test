@@ -24,6 +24,7 @@ pipelines:
             - pushd $res_testTrigger_resourcePath
             - pwd
             - ls
+            - npm config set registry https://registry.npmjs.org/
             - node -v
             - npm -v
             - cat ~/.npmrc
