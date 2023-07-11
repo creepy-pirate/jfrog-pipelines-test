@@ -3,7 +3,7 @@ resources:
     type: GitRepo
     configuration:
       gitProvider: vootla_git
-      path: ChaitanyaVootla/jfrogMultiTest
+      path: creepy-pirate/jfrog-pipelines-test
       branches:
         include: main
   - name: publish_buildInfo
