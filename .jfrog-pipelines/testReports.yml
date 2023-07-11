@@ -26,6 +26,7 @@ pipelines:
             - ls
             - node -v
             - npm -v
+            - cat ~/.npmrc
             - npm cache clean --force
             - npm i
             - touch .env
