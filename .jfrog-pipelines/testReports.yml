@@ -72,4 +72,59 @@ pipelines:
             - echo "REPORTS_COUNT=$reportsCount" >> .env
             - echo "SUITES_COUNT=$suitesCount" >> .env
             - echo "STEPLET_NUMBER=$steplet_number" >> .env
+            - pushd $res_testTrigger_resourcePath
+            - npm install
+            - touch .env
+            - echo "REPORTS_COUNT=$reportsCount" >> .env
+            - echo "SUITES_COUNT=$suitesCount" >> .env
+            - echo "STEPLET_NUMBER=$steplet_number" >> .env
+            - echo "REPORTS_COUNT=$reportsCount" >> .env
+            - echo "SUITES_COUNT=$suitesCount" >> .env
+            - echo "STEPLET_NUMBER=$steplet_number" >> .env
+            - pushd $res_testTrigger_resourcePath
+            - npm install
+            - touch .env
+            - echo "REPORTS_COUNT=$reportsCount" >> .env
+            - echo "SUITES_COUNT=$suitesCount" >> .env
+            - echo "STEPLET_NUMBER=$steplet_number" >> .env
+            - echo "REPORTS_COUNT=$reportsCount" >> .env
+            - echo "SUITES_COUNT=$suitesCount" >> .env
+            - echo "STEPLET_NUMBER=$steplet_number" >> .env
+            - pushd $res_testTrigger_resourcePath
+            - npm install
+            - touch .env
+            - echo "REPORTS_COUNT=$reportsCount" >> .env
+            - echo "SUITES_COUNT=$suitesCount" >> .env
+            - echo "STEPLET_NUMBER=$steplet_number" >> .env
+            - echo "REPORTS_COUNT=$reportsCount" >> .env
+            - echo "SUITES_COUNT=$suitesCount" >> .env
+            - echo "STEPLET_NUMBER=$steplet_number" >> .env
+            - pushd $res_testTrigger_resourcePath
+            - npm install
+            - touch .env
+            - echo "REPORTS_COUNT=$reportsCount" >> .env
+            - echo "SUITES_COUNT=$suitesCount" >> .env
+            - echo "STEPLET_NUMBER=$steplet_number" >> .env
+            - echo "REPORTS_COUNT=$reportsCount" >> .env
+            - echo "SUITES_COUNT=$suitesCount" >> .env
+            - echo "STEPLET_NUMBER=$steplet_number" >> .env
+            - pushd $res_testTrigger_resourcePath
+            - npm install
+            - touch .env
+            - echo "REPORTS_COUNT=$reportsCount" >> .env
+            - echo "SUITES_COUNT=$suitesCount" >> .env
+            - echo "STEPLET_NUMBER=$steplet_number" >> .env
+            - echo "REPORTS_COUNT=$reportsCount" >> .env
+            - echo "SUITES_COUNT=$suitesCount" >> .env
+            - echo "STEPLET_NUMBER=$steplet_number" >> .env
+            - pushd $res_testTrigger_resourcePath
+            - npm install
+            - touch .env
+            - echo "REPORTS_COUNT=$reportsCount" >> .env
+            - echo "SUITES_COUNT=$suitesCount" >> .env
+            - echo "STEPLET_NUMBER=$steplet_number" >> .env
+            - echo "REPORTS_COUNT=$reportsCount" >> .env
+            - echo "SUITES_COUNT=$suitesCount" >> .env
+            - echo "STEPLET_NUMBER=$steplet_number" >> .env
+            - echo "hello"
 
