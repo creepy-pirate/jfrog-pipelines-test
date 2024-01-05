@@ -1,74 +1,36 @@
-resources:
-  - name: testTrigger
-    type: GitRepo
-    configuration:
-      gitProvider: deepak_git
-      path: creepy-pirate/jfrog-pipelines-test
 pipelines:
-  - name: test_reports
+  - name: my_pipeline
     configuration:
       environmentVariables:
         readOnly:
-          reportsCount: 10
-          suitesCount: 10
-      retentionPolicy:
-        maxAgeDays: 1
+          env1: pipe_value1
+          env2:
+            default: pipe_value2
+            description: This is env2 description
+            values:
+              - pipe_value2
+              - pipe_value3
+              - pipe_value4
     steps:
-      - name: test_report
+      - name: my_step
         type: Bash
         configuration:
-          inputResources:
-            - name: testTrigger
+          environmentVariables:
+            step_env1:
+              default: step_value1
+              description: This is step_env1 description
+              values:
+                - step_value1
+                - step_value2
+                - step_value3
+              allowCustom: true
+            step_env2: step_value5
+            step_env3:
+              allowCustom: true
+              secure: true
+              default: "someValue"
         execution:
+          onStart:
+            - export DEEPAK="deepak"
           onExecute:
-            - pushd $res_testTrigger_resourcePath
-            - pwd
-            - touch .env
-            - echo "REPORTS_COUNT=$reportsCount" >> .env
-            - echo "SUITES_COUNT=$suitesCount" >> .env
-            - TOTAL_TESTS=$(($reportsCount*$suitesCount))
-            - update_run_description "Total tests => $TOTAL_TESTS"
-            - set_run_name $TOTAL_TESTS
-            - npm run test
-            - save_tests $res_testTrigger_resourcePath/
-          onSuccess:
-            - echo "success"
-      - name: no_test_reports
-        type: Bash
-        configuration:
-          inputSteps:
-            - name: test_report
-        execution:
-          onExecute:
-            - echo "done"
-      # - name: matrix_test_reports
-      #   type: Matrix
-      #   stepMode: Bash
-      #   configuration:
-      #     multiNode: true
-      #     inputResources:
-      #       - name: testTrigger
-      #     inputSteps:
-      #       - name: test_report
-      #   stepletMultipliers:
-      #     environmentVariables:
-      #       - animal:    dog
-      #         mineral:   copper
-      #         vegetable: carrot
-      #       - animal:    goat
-      #         mineral:   iron
-      #         vegetable: broccoli
-      #       - animal:    lizard
-      #         mineral:   lead
-      #   execution:
-      #     onExecute:
-      #       - pushd $res_testTrigger_resourcePath
-      #       - npm install
-      #       - touch .env
-      #       - echo "REPORTS_COUNT=$reportsCount" >> .env
-      #       - echo "SUITES_COUNT=$suitesCount" >> .env
-      #       - echo "STEPLET_NUMBER=$steplet_number" >> .env
-      #       - echo "REPORTS_COUNT=$reportsCount" >> .env
-      #       - echo "SUITES_COUNT=$suitesCount" >> .env
-      #       - echo "STEPLET_NUMBER=$steplet_number" >> .env
-           
+            - echo "test"
